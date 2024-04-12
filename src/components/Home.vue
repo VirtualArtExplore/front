@@ -1,6 +1,7 @@
 <template>
+  <LoginModal/>
   <div class="image-container">
-      <Header></Header>
+    <Header></Header>
     <img src="../assets/ImageHero.png" alt="Imagem" class="image" />
     <h1 class="image-text">
       Tenha Uma Incrível <br />
@@ -17,17 +18,17 @@
   <Disponivel />
   <Footer></Footer>
 
- 
 </template>
 <script>
 import Visitados from "./Visitados.vue";
 import Disponivel from "./Disponivel.vue";
 import Footer from "./Footer.vue";
 import Header from "./Header.vue";
+import LoginModal from "./LoginModal.vue";
 
 
 export default {
-  components: { Visitados, Disponivel, Footer,Header},
+  components: { Visitados,Disponivel,Footer,Header,LoginModal},
   data() {
     return {};
   },

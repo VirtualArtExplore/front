@@ -8,7 +8,7 @@
         <img src="../assets/museum-logo.png" alt="" class="logo" />
       </div>
       <div class="col-md-1 pb-4">
-        <a href="http://">Entrar</a>
+        <a href="./LoginModal.vue">Entrar</a>
       </div>
       <div class="col-md-1 pb-4">
         <a href="http://">Registrar</a>

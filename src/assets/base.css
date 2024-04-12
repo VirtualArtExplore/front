@@ -9,6 +9,8 @@
   --vt-c-black-mute: #282828;
 
   --vt-c-indigo: #2c3e50;
+  --vt-c-orange: #F79E1C;
+  --vt-c-light-orange: #F9EBBF;
 
   --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
   --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
@@ -47,6 +49,8 @@
 
     --color-heading: var(--vt-c-text-dark-1);
     --color-text: var(--vt-c-text-dark-2);
+    --color-orange: var(--vt-c-orange);
+    --color-orange-hover: var(--vt-c-light-orange);
   }
 }
 

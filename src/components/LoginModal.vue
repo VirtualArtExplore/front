@@ -2,33 +2,43 @@
     <div id="background" v-if="loginActive" >
     <div class="backdrop">
         <h2><a v-on:click="closeLogin">⭠</a>Login</h2>
-        <form action="">
+        <form @submit.prevent="realizarLogin">
                 <label for="email">E-mail</label>
                 <input class="input-text" type="email" placeholder="Digite seu email">
                 <label for="password">Senha</label>
                 <input class="input-text" type="password" placeholder="Digite sua senha">
-                <input class="btn-login" type="button" value="Login">
+                <input class="btn-login" type="submit" value="Login">
             </form>
-            <p>Não tem uma conta? <a href="">Resgistrar-se</a></p>
-        <div class="modal"></div>
+            <!--<p>Não tem uma conta? <a href="./Register.vue">Resgistrar-se</a></p>-->
     </div>
     </div>
 </template>
 
 <script>
+import RegisterModal from "./RegisterModal.vue";
+
 export default {
+  components: { RegisterModal },
   name: 'LoginModal',
   data(){
     return{
-        loginActive: true
+        loginActive: true,
+        registerActive: false,
     }
   },
     methods:{
+        realizarLogin() {
+        // Lógica para realizar o login
+        },
         openLogin: function(){
             this.loginActive = true;
         },
         closeLogin: function(){
             this.loginActive = false;
+            this.$emit('closeLog')
+        },
+        openRegister() {
+            this.registerActive = true;
         }
     }
   }
@@ -52,9 +62,9 @@ h2{
 }
 .backdrop{
     position: absolute;
-    width: 40%;
+    width: 50%;
     max-width: 500px;
-    min-width: 200px;
+    min-width: 300px;
     padding: 30px 20px;
     background: white;
     border-radius: 20px;
@@ -92,9 +102,8 @@ form{
     text-align: center;
 }
 .btn-login:hover{
-    background-color: var(--color-orange-hover);
-    cursor: pointer;
-    color: white;
+    opacity: 0.6;
+    transition: 0.3s;
 }
 label{
     color: var(--vt-c-black);

@@ -1,22 +1,22 @@
 <template>
-  <div class="container py-4 z-20">
-    <div class="row align-items-center">
-      <div class="col-md-2 pb-4">
-        <a href="http://">Favoritos</a>
+    <div class="fundo d-flex flex-row align-items-center justify-content-around align-items-baseline pt-2">
+      <div class="">
+        <ul class="d-flex flex-row p-0">
+          <li><a href="">Museus</a></li>
+          <li><a class="px-2" href="">Obras</a></li>
+          <li><a href="">Exposições</a></li>
+        </ul>
       </div>
-      <div class="col-md-3 pb-4">
-        <img src="../assets/museum-logo.png" alt="" class="logo" />
+      <div class="">
+        <img src="../assets/logo-virtual-branca.png" alt="" class="logo" />
       </div>
-      <div class="col-md-1 pb-4">
-        <a v-on:click="openLogin">Entrar</a>
+      <div class="d-flex flex-row p-0 ">
+        <a class="btn mx-3" v-on:click="openLogin">Entrar</a>
         <LoginModal v-if="loginActive" @closeLog="closeLogin"/>
-      </div>
-      <div class="col-md-1 pb-4">
-        <a v-on:click="openRegister">Registrar</a>
+        <a class="btn mx-2 btn-outline-light" v-on:click="openRegister">Registrar</a>
         <RegisterModal v-if="registerActive" @closeReg="closeRegister"/>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -55,30 +55,29 @@ export default {
 </script>
 
 <style scoped>
-.container {
+.fundo {
   position: absolute;
-  bottom: 79%;
-  left: 29%;
+  background-color: rgb(0, 0, 0,0);
+  width: 100vw;
+  z-index: 20;
 }
-img {
-  width: 100%;
-}
-
 .logo {
   width: 100%;
-  max-width: 208px;
+  max-width: 180px;
 }
 .arrow {
   max-width: 40px;
 }
-
 .code {
   max-width: 24px;
 }
-
 a {
   color: white;
   font-family: "Poppins", sans-serif;
   cursor: pointer;
+  font-size: 1rem;
+}
+ul{
+  list-style: none;
 }
 </style>

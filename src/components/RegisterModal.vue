@@ -1,6 +1,6 @@
 <template>
     <div id="background" v-if="registerActive" >
-    <div class="backdrop">
+    <div class="backdrop px-10">
         <h2><a v-on:click="closeRegister">⭠</a>Register</h2>
         <form class="forms" @submit.prevent="realizarRegister">
             <div class="caixa-form">
@@ -21,7 +21,7 @@
             </div>
                 <input class="btn-login" type="button" value="Registrar">
             </form>
-            <!--<p>Já tem uma conta?<a href="">Faça Login</a></p>-->
+            <p>Já tem uma conta?<a href="">Faça Login</a></p>
     </div>
     </div>
 </template>
@@ -67,7 +67,7 @@ h2{
 .backdrop{
     position: absolute;
     width: 50%;
-    max-width: 500px;
+    max-width: 400px;
     min-width: 300px;
     padding: 30px 20px;
     background: white;

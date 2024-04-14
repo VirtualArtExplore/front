@@ -9,7 +9,7 @@
                 <input class="input-text" type="password" placeholder="Digite sua senha">
                 <input class="btn-login" type="submit" value="Login">
             </form>
-            <!--<p>Não tem uma conta? <a href="./Register.vue">Resgistrar-se</a></p>-->
+            <p>Não tem uma conta? <a href="./Register.vue">Resgistrar-se</a></p>
     </div>
     </div>
 </template>
@@ -63,7 +63,7 @@ h2{
 .backdrop{
     position: absolute;
     width: 50%;
-    max-width: 500px;
+    max-width: 400px;
     min-width: 300px;
     padding: 30px 20px;
     background: white;

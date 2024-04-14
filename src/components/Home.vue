@@ -1,6 +1,6 @@
 <template>
   <Header></Header> 
-<!-- 
+
   <div class="image-container">
     
     <img src="../assets/ImageHero.png" alt="Imagem" class="image" />
@@ -17,7 +17,7 @@
   </div>
   <visitados />
   <Disponivel />
-  <Footer></Footer>-->
+  <Footer></Footer>
 </template>
 <script>
 import Visitados from "./Visitados.vue";

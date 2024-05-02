@@ -1,8 +1,7 @@
 <template>
-  <Header></Header> 
+  <Header></Header>
 
   <div class="image-container">
-    
     <img src="../assets/ImageHero.png" alt="Imagem" class="image" />
     <h1 class="image-text">
       Tenha Uma Incrível <br />
@@ -13,7 +12,23 @@
       class="input-overlay"
       placeholder="Procure por Museu, Cidade, Estado...."
     />
-    <font-awesome-icon icon="search" class="search-icon" size="lg"/>
+    <font-awesome-icon icon="search" class="search-icon" size="lg" />
+  </div>
+  <div class="container categorias mt-5">
+    <h1 class="">
+      Encontre pelo seu gosto <br />
+      <span> Categorias </span>
+    </h1>
+      <div class="cards">
+        <div class="categoria" v-for="(categoria, index) in categorias" :key="index">
+          <img :src="categoria":alt="'Imagem ' + (index + 1)"
+              class="img-card">
+
+        </div>
+      </div>
+      <div class="content">
+        <FontAwesomeIcon :icon="faHouse" />
+      </div>
   </div>
   <visitados />
   <Disponivel />
@@ -25,11 +40,16 @@ import Disponivel from "./Disponivel.vue";
 import Footer from "./Footer.vue";
 import Header from "./Header.vue";
 
-
 export default {
-  components: { Visitados,Disponivel,Footer,Header},
+  components: { Visitados, Disponivel, Footer, Header },
   data() {
     return {
+      categorias: [
+        "../src/assets/categorias/esp.png",
+        "../src/assets/categorias/pessoas.png",
+        "../src/assets/categorias/escravidao.png",
+        "../src/assets/categorias/culturaLocal.png"
+      ],
     };
   },
 };
@@ -79,11 +99,19 @@ span {
 .search-icon {
   position: absolute;
   top: 74%;
-    left: 65%;
+  left: 65%;
   transform: translate(-50%, -50%);
 }
 
 img {
   width: 100%;
+}
+.cards {
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-end;
 }
 </style>

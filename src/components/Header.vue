@@ -1,5 +1,5 @@
 <template>
-    <div class="fundo d-flex flex-row align-items-center justify-content-around align-items-baseline pt-2">
+    <div class="fundo d-flex flex-row align-items-center justify-content-around align-items-baseline pt-5">
       <div class="">
         <ul class="d-flex flex-row p-0">
           <li><a href="">Museus</a></li>

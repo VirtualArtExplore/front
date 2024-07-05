@@ -1,25 +1,110 @@
 <template>
-  <div class="container py-4">
-    <div class="row align-items-center">
-      <div class="col-md-9 pb-4">
-        <img src="../assets/museum.png" alt="" class="logo" />
+  <!-- Footer -->
+  <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+    <!-- Section: Social media -->
+    <section
+      class="d-flex justify-content-center justify-content-lg-between p-4"
+    >
+      <!-- Right -->
+      <div>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-github"></i>
+        </a>
       </div>
-      <div class="col-md-2 pb-4">
-        <button @click="scrollToTop" class="btn">
-          <img src="../assets/ArrowCircleUp.png" alt="" class="arrow" />
-          Voltar ao topo
-        </button>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <img
+              src="@/assets/logo-virtual-marrom.png"
+              alt="Icons"
+              class="img-seta"
+            />
+
+            <p class="my-5">Explore museus virtualmente em todo Brasil</p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Sobre</h6>
+            <p>
+              <a href="#!" class="text-reset">Museus</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Obras</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Exposições</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Parceiros</h6>
+            <p>
+              <a href="#!" class="text-reset">Crie um museu</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Divulgue sua exposição</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Convide um amigo</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Suporte</h6>
+            <p> Entre em contato com o suporte: 
+              att@virtualartexplore.com</p>
+            <p> <a href=""> Acesse nosso repositório </a></p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
       </div>
-      <hr>
-      <div class="col-md-9 ">
-        ©2024
-      </div>
-      <div class="col-md-3 ">
-        <img src="../assets/code.png" alt="" class="code">
-        Desenvolvido por <span> Gustavo Ataide </span>
-      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">
+      © 2021 Copyright:
+      <a class="text-reset fw-bold" href="https://mdbootstrap.com/"
+        >Equipe Museu</a
+      >
     </div>
-  </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
 </template>
 
 <script>
@@ -31,10 +116,10 @@ export default {
     scrollToTop() {
       window.scrollTo({
         top: 0,
-        behavior: "smooth" 
+        behavior: "smooth",
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -42,19 +127,11 @@ export default {
 .container {
   font-family: "Poppins", sans-serif;
 }
-img {
-  width: 100%;
+footer {
+  background-color: #e0a449 !important;
 }
 
-.logo {
-  width: 100%;
-  max-width: 208px;
-}
-.arrow {
-  max-width: 40px;
-}
-
-.code {
-  max-width: 24px;
+p, a {
+  color: #481810;
 }
 </style>

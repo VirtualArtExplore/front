@@ -4,7 +4,11 @@
     <h2 class="">Mais visitados</h2>
     <div class="row">
       <!-- Use o loop apenas para as imagens -->
-      <div v-for="(image, index) in images" :key="index" class="col-md-4 mt-4 mb-5">
+      <div
+        v-for="(image, index) in images"
+        :key="index"
+        class="col-md-4 mt-4 mb-5"
+      >
         <div class="card-container position-relative">
           <div class="img">
             <img
@@ -13,18 +17,24 @@
               class="card-img-top"
             />
           </div>
-          <div class="card-overlay">
-            <div class="content">
+          <div class="card-overlay row align-self-center">
+            <div class="content col-md-9">
               <h5 class="card-title">Museu Théo Brandão</h5>
               <span>Maceió, Alagoas</span>
               <strong>Público</strong>
             </div>
-            <div class="content">
-              <FontAwesomeIcon :icon="faHouse" />
+            <div class="content col-md-3 mt-5">
+              <img src="@/assets/Icons.png" alt="Icons" />
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+      <button type="button" class="btn btn-warning w-25">
+        Mais Museus
+        <img src="@/assets/Vector.png" alt="Icons" class="img-seta" />
+      </button>
     </div>
   </div>
 </template>
@@ -75,7 +85,7 @@ export default {
 
 .content {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
 }
 
 .card-text {
@@ -96,6 +106,17 @@ export default {
   border-radius: 17px;
 }
 
+.img-seta {
+  width: 8%;
+  margin: 0px 28px;
+}
+
+.btn {
+  font-family: 'Inter';
+  font-weight: bold;
+  color: #fff;
+  font-size: 20px;
+}
 .card-img-top {
   width: 100%;
   height: auto;

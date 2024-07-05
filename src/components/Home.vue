@@ -1,9 +1,9 @@
 <template>
-  <Header></Header> 
+  <Header></Header>
 
   <div class="image-container">
-    
     <img src="../assets/ImageHero.png" alt="Imagem" class="image" />
+
     <h1 class="image-text">
       Tenha Uma Incrível <br />
       <span> Experiência </span> Aqui!
@@ -13,10 +13,21 @@
       class="input-overlay"
       placeholder="Procure por Museu, Cidade, Estado...."
     />
-    <font-awesome-icon icon="search" class="search-icon" size="lg"/>
+    <font-awesome-icon icon="search" class="search-icon" size="lg" />
   </div>
-  <visitados />
+  <div class="container mt-5">
+    <span>Explore mais </span>
+    <h2 class="mb-4">Outras opções para você</h2>
+    <div class="row justify-content-md-center">
+      <div v-for="(image, index) in images" :key="index" class="col-md-3">
+        <img :src="image" :alt="'Imagem ' + (index + 1)" class="image-card" />
+      </div>
+    </div>
+    
+  </div>
   <Disponivel />
+  <visitados />
+
   <Footer></Footer>
 </template>
 <script>
@@ -25,11 +36,16 @@ import Disponivel from "./Disponivel.vue";
 import Footer from "./Footer.vue";
 import Header from "./Header.vue";
 
-
 export default {
-  components: { Visitados,Disponivel,Footer,Header},
+  components: { Visitados, Disponivel, Footer, Header },
   data() {
     return {
+      images: [
+        "../src/assets/fut.png",
+        "../src/assets/Pessoas.png",
+        "../src/assets/escravidaoexp.png",
+        "../src/assets/culturalExp.png",
+      ],
     };
   },
 };
@@ -41,11 +57,18 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
+
+.card-tag {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 
 .input-overlay {
   position: absolute;
-  top: 74%;
+  top: 73%;
   left: 49%;
   transform: translate(-50%, -50%);
   padding: 13px 14px;
@@ -78,8 +101,8 @@ span {
 
 .search-icon {
   position: absolute;
-  top: 74%;
-    left: 65%;
+  top: 73%;
+  left: 65%;
   transform: translate(-50%, -50%);
 }
 

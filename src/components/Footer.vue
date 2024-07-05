@@ -3,7 +3,7 @@
   <footer class="text-center text-lg-start bg-body-tertiary text-muted">
     <!-- Section: Social media -->
     <section
-      class="d-flex justify-content-center justify-content-lg-between p-4"
+      class="d-flex justify-content-center justify-content-lg-between p-3"
     >
       <!-- Right -->
       <div>
@@ -43,8 +43,7 @@
               alt="Icons"
               class="img-seta"
             />
-
-            <p class="my-5">Explore museus virtualmente em todo Brasil</p>
+            <p class="my-4">Explore museus virtualmente em <br>todo Brasil</p>
           </div>
           <!-- Grid column -->
 
@@ -96,7 +95,7 @@
     <!-- Section: Links  -->
 
     <!-- Copyright -->
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.04); color: var(--vt-c-brown);">
       © 2021 Copyright:
       <a class="text-reset fw-bold" href="https://mdbootstrap.com/"
         >Equipe Museu</a
@@ -128,10 +127,14 @@ export default {
   font-family: "Poppins", sans-serif;
 }
 footer {
-  background-color: #e0a449 !important;
+  background-color: var(--vt-c-header) !important;
 }
 
-p, a {
-  color: #481810;
+.img-seta{
+  width: 100%;
+}
+
+p, a, h6 {
+  color: var(--vt-c-brown);
 }
 </style>

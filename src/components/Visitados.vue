@@ -108,7 +108,7 @@ export default {
 
 .img-seta {
   width: 8%;
-  margin: 0px 28px;
+  margin: 0px 25px;
 }
 
 .btn {

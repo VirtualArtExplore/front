@@ -1,5 +1,5 @@
 <template>
-    <div class="fundo d-flex flex-row align-items-center justify-content-around align-items-baseline pt-5">
+    <div class="fundo d-flex flex-row align-items-center justify-content-around align-items-baseline py-3">
       <div class="">
         <ul class="d-flex flex-row p-0">
           <li><a href="">Museus</a></li>
@@ -8,12 +8,12 @@
         </ul>
       </div>
       <div class="">
-        <img src="../assets/logo-virtual-branca.png" alt="" class="logo" />
+        <img src="../assets/logo-virtual-marrom.png" alt="" class="logo" />
       </div>
       <div class="d-flex flex-row p-0 ">
         <a class="btn mx-3" v-on:click="openLogin">Entrar</a>
         <LoginModal v-if="loginActive" @closeLog="closeLogin"/>
-        <a class="btn mx-2 btn-outline-light" v-on:click="openRegister">Registrar</a>
+        <a class="btn mx-2 btn-outline-light register" v-on:click="openRegister">Registrar</a>
         <RegisterModal v-if="registerActive" @closeReg="closeRegister"/>
       </div>
     </div>
@@ -56,8 +56,8 @@ export default {
 
 <style scoped>
 .fundo {
-  position: absolute;
-  background-color: rgb(0, 0, 0,0);
+  position: relative;
+  background-color: var(--vt-c-header);
   width: 99%;
   z-index: 20;
 }
@@ -72,12 +72,15 @@ export default {
   max-width: 24px;
 }
 a {
-  color: white;
+  color: var(--vt-c-brown);
   font-family: "Poppins", sans-serif;
   cursor: pointer;
   font-size: 1rem;
 }
 ul{
   list-style: none;
+}
+.btn.mx-2.btn-outline-light.register{
+  border: solid 1px var(--vt-c-brown);
 }
 </style>

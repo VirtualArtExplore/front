@@ -20,10 +20,10 @@
             <span style="font-weight: 600;color: var(--vt-c-brown);line-height: 1rem;">Explore mais</span>
             <h2 style="line-height: 1.5rem;">Obras do Museu</h2>
             <div class="grade-obras">
-            <ObrasCaixa></ObrasCaixa>
-            <ObrasCaixa></ObrasCaixa>
-            <ObrasCaixa></ObrasCaixa>
-            <ObrasCaixa></ObrasCaixa>
+            <BoxArtwork></BoxArtwork>
+            <BoxArtwork></BoxArtwork>
+            <BoxArtwork></BoxArtwork>
+            <BoxArtwork></BoxArtwork>
             </div>
         </div>
     </div>
@@ -33,11 +33,11 @@
 <script>
 import Header from "./HeaderPage.vue";
 import Footer from "./Footer.vue";
-import ObrasCaixa from "./BoxArtwork.vue";
+import BoxArtwork from "./BoxArtwork.vue";
 
 
 export default {
-  components: {ObrasCaixa,Header,Footer},
+  components: {BoxArtwork,Header,Footer},
   data() {
     return {
     };

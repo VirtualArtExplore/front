@@ -15,7 +15,7 @@
 <script>
 
 export default {
-  name: 'ObrasCaixa',
+  name: 'BoxArtwork',
   data() {
     return {
     };

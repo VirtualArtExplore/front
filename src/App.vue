@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Home from './components/Home.vue';
+import Home from './components/MuseumEdit.vue';
 
 
 export default {

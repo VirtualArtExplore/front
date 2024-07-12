@@ -19,6 +19,39 @@
     <input type="input" class="form__field" placeholder="Ex. Museu das Artes" required="">
     <label for="obs" class="form__label">Descrição</label>
     <textarea class="form__field texto" placeholder="Descreva sobre o museu" name="inf"></textarea>
+    <label for="obs" class="form__label">Estado</label>
+    <select class="form-select" style="background-color: #e2e2e2;" id="estado" name="estado">
+    <option value="AC">Acre</option>
+    <option value="AL">Alagoas</option>
+    <option value="AP">Amapá</option>
+    <option value="AM">Amazonas</option>
+    <option value="BA">Bahia</option>
+    <option value="CE">Ceará</option>
+    <option value="DF">Distrito Federal</option>
+    <option value="ES">Espírito Santo</option>
+    <option value="GO">Goiás</option>
+    <option value="MA">Maranhão</option>
+    <option value="MT">Mato Grosso</option>
+    <option value="MS">Mato Grosso do Sul</option>
+    <option value="MG">Minas Gerais</option>
+    <option value="PA">Pará</option>
+    <option value="PB">Paraíba</option>
+    <option value="PR">Paraná</option>
+    <option value="PE">Pernambuco</option>
+    <option value="PI">Piauí</option>
+    <option value="RJ">Rio de Janeiro</option>
+    <option value="RN">Rio Grande do Norte</option>
+    <option value="RS">Rio Grande do Sul</option>
+    <option value="RO">Rondônia</option>
+    <option value="RR">Roraima</option>
+    <option value="SC">Santa Catarina</option>
+    <option value="SP">São Paulo</option>
+    <option value="SE">Sergipe</option>
+    <option value="TO">Tocantins</option>
+    <option value="EX">Estrangeiro</option>
+    </select>
+    <label for="name" class="form__label">Cidade</label>
+    <input type="input" class="form__field" placeholder="Ex. Maceió" required="">
     <label for="inf" class="form__label">Mais informações
     </label>
     <textarea class="form__field texto" placeholder="Coloque aqui informações como endereço, contato, redes sociais..." name="obs"></textarea>
@@ -52,6 +85,7 @@ return {
 
 </script>
 
+#e2e2e2
 
 <style>
 .form__group {
@@ -67,16 +101,16 @@ return {
   border: none;
   border-bottom: 2px solid #9b9b9b;
   outline: 0;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #000;
   padding: 7px 10px;
-  background: rgb(0, 0, 0,0.05);
+  background-color: #e2e2e2;
   transition: border-color 0.2s;
   margin-bottom: 10px;
 }
 .form__field.texto{
   font-size: 1rem;
-  height: 120px;
+  height: 10  0px;
 }
 
 .form__field::placeholder {
@@ -94,7 +128,7 @@ return {
   display: block;
   transition: 0.2s;
   font-size: 17px;
-  color: #9b9b9b;
+  color: rgba(75, 85, 99, 1);
   pointer-events: none;
 }
 
@@ -119,7 +153,7 @@ border-radius: 50px;
   align-items: center;
   justify-content: center;
   border: 2px dashed #cacaca;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: #e2e2e2;
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0px 48px 35px -48px rgba(0,0,0,0.1);
@@ -191,5 +225,14 @@ flex-wrap: wrap;
 justify-content: center;
 gap: 30px;
 margin: 40px 0;
+}
+
+.resume-desc select{
+  color: rgba(75, 85, 99, 1);
+  background-color: #e2e2e2;
+  border-radius: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  margin-bottom: 10px;
 }
 </style>

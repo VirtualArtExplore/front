@@ -64,7 +64,9 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+h2{
+  color: var(--vt-c-brown);
+}
 
 .input-overlay {
   position: absolute;

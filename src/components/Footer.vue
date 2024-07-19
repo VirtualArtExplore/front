@@ -39,11 +39,11 @@
           <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
             <!-- Content -->
             <img
-              src="@/assets/logo-virtual-marrom.png"
+              src="/assets/logo-virtual-marrom.png"
               alt="Icons"
               class="img-seta"
             />
-            <p class="my-4">Explore museus virtualmente em <br>todo Brasil</p>
+            <p class="my-4">Explore museus virtualmente em <br />todo Brasil</p>
           </div>
           <!-- Grid column -->
 
@@ -83,9 +83,8 @@
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">Suporte</h6>
-            <p> Entre em contato com o suporte: 
-              att@virtualartexplore.com</p>
-            <p> <a href=""> Acesse nosso repositório </a></p>
+            <p>Entre em contato com o suporte: att@virtualartexplore.com</p>
+            <p><a href=""> Acesse nosso repositório </a></p>
           </div>
           <!-- Grid column -->
         </div>
@@ -95,7 +94,10 @@
     <!-- Section: Links  -->
 
     <!-- Copyright -->
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.04); color: var(--vt-c-brown);">
+    <div
+      class="text-center p-4"
+      style="background-color: rgba(0, 0, 0, 0.04); color: var(--vt-c-brown)"
+    >
       © 2021 Copyright:
       <a class="text-reset fw-bold" href="https://mdbootstrap.com/"
         >Equipe Museu</a
@@ -130,11 +132,13 @@ footer {
   background-color: var(--vt-c-header) !important;
 }
 
-.img-seta{
+.img-seta {
   width: 100%;
 }
 
-p, a, h6 {
+p,
+a,
+h6 {
   color: var(--vt-c-brown);
 }
 </style>

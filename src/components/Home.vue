@@ -2,7 +2,7 @@
   <Header></Header>
 
   <div class="image-container">
-    <img src="../assets/ImageHero.png" alt="Imagem" class="image" />
+    <img src="/assets/ImageHero.png" alt="Imagem" class="image" />
 
     <h1 class="image-text">
       Tenha Uma Incrível <br />
@@ -23,7 +23,6 @@
         <img :src="image" :alt="'Imagem ' + (index + 1)" class="image-card" />
       </div>
     </div>
-    
   </div>
   <Disponivel />
   <visitados />
@@ -41,10 +40,10 @@ export default {
   data() {
     return {
       images: [
-        "../src/assets/fut.png",
-        "../src/assets/Pessoas.png",
-        "../src/assets/escravidaoexp.png",
-        "../src/assets/culturalExp.png",
+        "/assets/fut.png",
+        "/assets/Pessoas.png",
+        "/assets/escravidaoexp.png",
+        "/assets/culturalExp.png",
       ],
     };
   },
@@ -64,7 +63,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
 }
-h2{
+h2 {
   color: var(--vt-c-brown);
 }
 

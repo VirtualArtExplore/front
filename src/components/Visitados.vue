@@ -24,7 +24,7 @@
               <strong>Público</strong>
             </div>
             <div class="content col-md-3 mt-5">
-              <img src="@/assets/Icons.png" alt="Icons" />
+              <img src="/assets/Icons.png" alt="Icons" />
             </div>
           </div>
         </div>
@@ -33,7 +33,7 @@
     <div class="row justify-content-center mt-5">
       <button type="button" class="btn btn-warning w-25">
         Mais Museus
-        <img src="@/assets/Vector.png" alt="Icons" class="img-seta" />
+        <img src="/assets/Vector.png" alt="Icons" class="img-seta" />
       </button>
     </div>
   </div>
@@ -47,12 +47,12 @@ export default {
   data() {
     return {
       images: [
-        "../src/assets/teoBrandao.png",
-        "../src/assets/floriano.png",
-        "../src/assets/image1.png",
-        "../src/assets/noname.png",
-        "../src/assets/palacio.png",
-        "../src/assets/museu-1.png",
+        "/assets/teoBrandao.png",
+        "/assets/floriano.png",
+        "/assets/image1.png",
+        "/assets/noname.png",
+        "/assets/palacio.png",
+        "/assets/museu-1.png",
       ],
     };
   },
@@ -112,7 +112,7 @@ export default {
 }
 
 .btn {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-weight: bold;
   color: #fff;
   font-size: 20px;

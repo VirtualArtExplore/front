@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
-  <span>Explore mais </span>
-  <h2 class="mb-4">Outras opcões para você</h2>
+  <div class="container mt-5">
+  <span class="subtitle" >Explore mais</span>
+  <h2 class="title-h2">Algumas obras para você</h2>
   <div class="row">
     <div v-for="(image, index) in images" :key="index" class="col-md-4 mb-4">
       <div class="card-container">

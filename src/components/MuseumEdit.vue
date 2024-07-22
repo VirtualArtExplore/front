@@ -2,7 +2,7 @@
     <HeaderNovo></HeaderNovo>
 <div class="museu-page">
     <div class="sec-resume">
-        
+
         <div ><p class="form__label">Capa</p>
             <label class="custum-file-upload" for="file">
 <div class="icon">
@@ -22,7 +22,7 @@
     <label for="obs" class="form__label">Estado</label>
     <select class="form-select" style="background-color: #e2e2e2;" id="estado" name="estado">
     <option value="AC">Acre</option>
-    <option value="AL">Alagoas</option>
+    <option value="AL" selected>Alagoas</option>
     <option value="AP">Amapá</option>
     <option value="AM">Amazonas</option>
     <option value="BA">Bahia</option>

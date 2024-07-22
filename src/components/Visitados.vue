@@ -1,13 +1,13 @@
 <template>
-  <div class="py-5 mt-5 container">
-    <span> Tópicos para você </span>
-    <h2 class="">Mais visitados</h2>
-    <div class="row">
+  <div class="mt-5 container p-0" style="width: 100%;">
+    <span class="subtitle" > Tópicos para você </span>
+    <h2 class="title-h2">Mais visitados</h2>
+    <div class="d-flex row wrap justify-content-between">
       <!-- Use o loop apenas para as imagens -->
       <div
         v-for="(image, index) in images"
         :key="index"
-        class="col-md-4 mt-4 mb-5"
+        class="box-1"
       >
         <div class="card-container position-relative">
           <div class="img">
@@ -17,23 +17,24 @@
               class="card-img-top"
             />
           </div>
-          <div class="card-overlay row align-self-center">
+          <div class="card-overlay row align-items-center justify-content-center">
             <div class="content col-md-9">
-              <h5 class="card-title">Museu Théo Brandão</h5>
-              <span>Maceió, Alagoas</span>
-              <strong>Público</strong>
+              <h5 class="card-title">Museu Théo</h5>
+              <span class="text-location">Maceió-AL</span><span>Esportes</span>
+
             </div>
-            <div class="content col-md-3 mt-5">
-              <img src="@/assets/Icons.png" alt="Icons" />
+            <div class="col-md-3">
+              <img class="icon" src="@/assets/Icons.png" alt="Icons" />
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="row justify-content-center mt-5">
-      <button type="button" class="btn btn-warning w-25">
+      <button type="button" class="btn btn-warning w-25 mb-4">
         Mais Museus
-        <img src="@/assets/Vector.png" alt="Icons" class="img-seta" />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="white" width="20px"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+
       </button>
     </div>
   </div>
@@ -47,7 +48,7 @@ export default {
   data() {
     return {
       images: [
-        "../src/assets/teoBrandao.png",
+        "../src/assets/museus/museu-theo-brandao.jpg",
         "../src/assets/floriano.png",
         "../src/assets/image1.png",
         "../src/assets/noname.png",
@@ -63,24 +64,34 @@ export default {
 </script>
 
 <style scoped>
+.box-1{
+  width: 25%;
+  max-width: 400px;
+  min-width: 200px;
+}
 .card-container {
   position: relative;
+  width: 100%;
+  margin-bottom: 100px;
 }
 
 .card-overlay {
   position: absolute;
-  top: 97%;
-  left: 47%;
-  transform: translate(-50%, -50%);
-  width: 80%; /* Ajuste conforme necessário */
+  margin-top: -50px;
+  left: 10%;
+  width: 88%; /* Ajuste conforme necessário */
   background-color: rgba(255, 255, 255, 1);
-  padding: 1rem;
-  border-radius: 17px;
-  z-index: 1;
+  padding: 10px;
+  border-radius: 16px;
+  z-index: 55;
+  color: var(--vt-c-brown);
+  font-family: 'poppins';
 }
 
 .card-title {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .content {
@@ -96,31 +107,42 @@ export default {
   cursor: pointer;
 }
 
-.fa-heart.fas {
-  color: yellow;
+.text-location{
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--vt-c-brown);
+  opacity: 0.5;
 }
 
 .img {
   width: 100%;
   overflow: hidden;
-  border-radius: 17px;
-}
-
-.img-seta {
-  width: 8%;
-  margin: 0px 25px;
+  border-radius: 15px;
 }
 
 .btn {
-  font-family: 'Inter';
-  font-weight: bold;
+  background-color: var(--vt-c-orange);
+  font-family: 'poppins';
+  font-weight: 600;
   color: #fff;
   font-size: 20px;
+  border: none;
+  height: 60px;
+  max-width: 220px;
+}
+.btn:hover {
+  background-color: var(--vt-c-brown);
+  color: #fff;
+  transform: scale(1.02);
+  transition: 0.3s;
 }
 .card-img-top {
   width: 100%;
-  height: auto;
+  height: 250px;
   display: block;
-  max-width: 391px;
+}
+.icon {
+  width: 50px;
+  height: auto;
 }
 </style>

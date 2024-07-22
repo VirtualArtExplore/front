@@ -2,31 +2,40 @@
   <Header></Header>
 
   <div class="image-container">
-    <img src="../assets/ImageHero.png" alt="Imagem" class="image" />
 
     <h1 class="image-text">
       Tenha Uma Incrível <br />
-      <span> Experiência </span> Aqui!
+      <span>Experiência</span> Aqui!
     </h1>
-    <input
-      type="text"
-      class="input-overlay"
+<div class="input-div"><input
+      type="text" class="input-overlay"
       placeholder="Procure por Museu, Cidade, Estado...."
     />
-    <font-awesome-icon icon="search" class="search-icon" size="lg" />
+    <button class="button-search"><font-awesome-icon icon="search" class="search-icon" size="lg" /></button>
+</div>
   </div>
-  <div class="container mt-5">
-    <span>Explore mais </span>
-    <h2 class="mb-4">Outras opções para você</h2>
+
+  <div class="page container-sm px-5 my-5">
+    <span class="subtitle">Encontre pelo seu gosto</span>
+    <h2 class="title-h2 mb-4">Categorias</h2><!--
     <div class="row justify-content-md-center">
-      <div v-for="(image, index) in images" :key="index" class="col-md-3">
+      <div v-for="(image, index) in images" :key="index" class="col-md-3 category">
         <img :src="image" :alt="'Imagem ' + (index + 1)" class="image-card" />
       </div>
+    </div>-->
+    <div class="d-flex flex-row justify-content-between flex-wrap">
+      <div id="categ-esportes" :on-click="teste" class="category"><h5 class="categ-title"
+        >Esportes</h5></div>
+        <div id="categ-pessoas" :on-click="teste" class="category"><h5 class="categ-title"
+        >Pessoas</h5></div>
+        <div id="categ-escravidao" :on-click="teste" class="category"><h5 class="categ-title"
+          >Escravidão</h5></div>
+          <div id="categ-cultura" :on-click="teste" class="category"><h5 class="categ-title"
+            >Cultura</h5></div>
     </div>
-    
+    <visitados />
   </div>
-  <Disponivel />
-  <visitados />
+  <!--<Disponivel />-->
 
   <Footer></Footer>
 </template>
@@ -41,10 +50,10 @@ export default {
   data() {
     return {
       images: [
-        "../src/assets/fut.png",
-        "../src/assets/Pessoas.png",
-        "../src/assets/escravidaoexp.png",
-        "../src/assets/culturalExp.png",
+        "../src/assets/categorias/categ-esportes.jpg",
+        "../src/assets/categorias/categ-pessoas.jpg",
+        "../src/assets/categorias/categ-escravidao.jpg",
+        "../src/assets/categorias/categ-cultura.jpeg",
       ],
     };
   },
@@ -52,45 +61,94 @@ export default {
 </script>
 
 <style>
+.categ-title{
+  font-family: 'Poppins';
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.category{
+  background-size: cover;
+  background-position: center;
+  height: 100px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 23%;
+  min-width: 200px;
+}
+.category:hover{
+  cursor: pointer;
+  transform: scale(1.02);
+  transition: 0.5s;
+}
 .image-container {
+  padding-top: 100px;
+  background-image: url("../assets/categorias/capa-museu2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  height: 600px;
+  gap: 20px;
+}
+#categ-esportes{
+  background-image: url("../assets/categorias/categ-esportes.jpg");
+}
+#categ-pessoas{
+  background-image: url("../assets/categorias/categ-pessoas.jpg");
+}
+#categ-escravidao{
+  background-image: url("../assets/categorias/categ-escravidao.jpg");
+}
+#categ-cultura{
+  background-image: url("../assets/categorias/categ-cultura2.jpg");
 }
 
 .card-tag {
   background-repeat: no-repeat;
   background-size: cover;
 }
-h2{
-  color: var(--vt-c-brown);
+.button-search{
+  border:none;
+  background-color: rgba(0, 0, 0, 0);
 }
-
-.input-overlay {
-  position: absolute;
-  top: 73%;
-  left: 49%;
-  transform: translate(-50%, -50%);
-  padding: 13px 14px;
-  border: 1px solid #ccc;
-  border-radius: 18px;
-  opacity: 0.8;
-  text-align: start;
+.input-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 15px;
+  background-color: #E9E9E9;
+  max-width: 700px;
   width: 100%;
-  max-width: 773px;
-  height: 71px;
-  font-size: 17px;
+}
+.input-overlay {
+  position: relative;
+  padding: 18px 10px;
+  text-align: start;
+  border: none;
+  width: 100%;
+  max-width: 700px;
+  font-size: 1.1rem;
+  font-family: "Poppins", sans-serif;
+  background-color: rgba(0, 0, 0, 0);
+  width: 90%;
+  color: #000;
+  font-weight: 500;
 }
 
 .image-text {
-  position: absolute;
-  top: 36%;
-  left: 32%;
+  position: relative;
   color: white;
   text-align: center;
-  font-size: 65px;
+  font-size: 3.5rem;
   font-weight: bold;
   font-family: "Poppins", sans-serif;
 }
@@ -98,17 +156,19 @@ h2{
 span {
   font-weight: bold;
   font-family: "Poppins", sans-serif;
-  color: #e0a449;
+  color: var(--vt-c-orange);
 }
 
 .search-icon {
-  position: absolute;
-  top: 73%;
-  left: 65%;
-  transform: translate(-50%, -50%);
+  position: relative;
 }
 
 img {
   width: 100%;
+}
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
 }
 </style>

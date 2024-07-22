@@ -24,4 +24,15 @@ a,
   }
 }
 
-
+.title-h2{
+  color: var(--vt-c-brown);
+  font-family: 'poppins';
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.subtitle{
+  color: var(--vt-c-brown);
+  font-weight: 500;
+  font-size: 15px;
+}

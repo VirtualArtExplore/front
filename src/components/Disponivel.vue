@@ -1,6 +1,6 @@
 <template>
   <div class="container mt-5">
-  <span class="subtitle" >Explore mais</span>
+  <span class="subtitle" >Explore mais {{ items }}</span>
   <h2 class="title-h2">Algumas obras para você</h2>
   <div class="row">
     <div v-for="(image, index) in images" :key="index" class="col-md-4 mb-4">
@@ -47,8 +47,18 @@ data() {
       "../src/assets/image2.png",
       "../src/assets/Group95.png",
     ],
-    favorites: [], // Array para rastrear quais itens são favoritos
-  };
+    favorites: [], // Array para rastrear quais itens são favoritos,
+      items: [],
+      currentPage: 1,
+      itemsPerPage: 8,
+      totalPages: 0
+  }},
+  mounted(){
+  /*
+  fetch('https://jsonplaceholder.typicode.com/todos')
+  .then(resp => resp.json())
+  .then(data => this.todo = data)*/
+  this.fetchData();;
 },
 methods: {
   toggleFavorite(index) {
@@ -64,6 +74,20 @@ methods: {
     // Verificar se o item está na lista de favoritos
     return this.favorites.includes(index);
   },
+  async fetchData() {
+      const response = await axios.get('https://jsonplaceholder.typicode.com/todos/'); // Substitua pela sua URL
+      this.items = response.data.slice(0, this.itemsPerPage);
+      this.totalPages = Math.ceil(response.data.length / this.itemsPerPage);
+    },
+    loadMore() {
+      if (this.currentPage < this.totalPages) {
+        this.currentPage++;
+        const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+        const endIndex = startIndex + this.itemsPerPage;
+        this.items   
+ = this.items.concat(response.data.slice(startIndex, endIndex));
+      }
+    }
 },
 components: {
   FontAwesomeIcon,

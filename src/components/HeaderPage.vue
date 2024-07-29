@@ -9,13 +9,13 @@
       </div>
       <div class="">
         <img src="../assets/logo-virtual-marrom.png" alt="" class="logo" />
-      </div>
+      </div><!--
       <div class="d-flex flex-row p-0 ">
         <a class="btn mx-3" v-on:click="openLogin">Entrar</a>
         <LoginModal v-if="loginActive" @closeLog="closeLogin"/>
         <a class="btn mx-2 btn-outline-light register" v-on:click="openRegister">Registrar</a>
         <RegisterModal v-if="registerActive" @closeReg="closeRegister"/>
-      </div>
+      </div>-->
     </div>
 </template>
 

@@ -5,7 +5,7 @@
 
 <div class="input-div"><input
       type="text" class="input-overlay"
-      placeholder="Procure por Museu, Cidade, Estado...."
+      placeholder="Procure por Museu, Cidade...."
     />
     <button class="button-search"><font-awesome-icon icon="search" class="search-icon" size="lg" /></button>
 </div>
@@ -41,10 +41,7 @@ export default {
 }
 .image-container {
   padding-top: 0px;
-  background-image: url("../assets/categorias/capa-museu2.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-color: #f9f9f9;
   position: relative;
   display: flex;
   justify-content: center;

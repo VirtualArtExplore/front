@@ -72,6 +72,8 @@ export default {
 }
 .box-1{
   width: 25%;
+  display: flex;
+  justify-content: center;
   max-width: 400px;
   min-width: 200px;
 }
@@ -84,7 +86,7 @@ export default {
 .card-overlay {
   position: absolute;
   margin-top: -50px;
-  width: 100%; /* Ajuste conforme necessário */
+  width: 99%; /* Ajuste conforme necessário */
   background-color: rgba(255, 255, 255, 1);
   padding: 10px;
   border-radius: 16px;

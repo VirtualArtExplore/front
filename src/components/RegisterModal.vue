@@ -4,20 +4,20 @@
         <h2><a v-on:click="closeRegister">⭠</a>Register</h2>
         <form class="forms" @submit.prevent="realizarRegister">
             <div class="caixa-form">
-                <label for="ger_nome" class="required">Nome</label>
-                <input class="input-text" name="ger_nome" type="text" placeholder="Digite seu nome" maxlength="50">
+                <label for="ger_firstname" class="required">Nome</label>
+                <input class="input-text" name="ger_firstname" type="text" placeholder="Digite seu nome" maxlength="50">
+            </div>
+            <div class="caixa-form">
+                <label for="ger_lastname" class="required">Nome</label>
+                <input class="input-text" name="ger_lastname" type="text" placeholder="Digite seu nome" maxlength="50">>
             </div>
             <div class="caixa-form">
                 <label class="required" for="ger_email">Email</label>
                 <input class="input-text" name="ger_email" type="email" placeholder="Digite seu email" maxlength="80" required >
             </div>
             <div class="caixa-form">
-                <label  for="ger_cpf">CPF</label>
-                <input class="input-text" name="ger_cpf" type="text" placeholder="Somente números" maxlength="11" size="11" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
-            </div>
-            <div class="caixa-form">
-                <label for="ger_senha" class="required">Senha</label>
-                <input class="input-text" name="ger_senha" type="password" placeholder="Digite sua senha" maxlength="50" required>
+                <label for="ger_password" class="required">Senha</label>
+                <input class="input-text" name="ger_password" type="password" placeholder="Digite sua senha" maxlength="50" required>
             </div>
                 <input class="btn-login" type="button" value="Registrar">
             </form>

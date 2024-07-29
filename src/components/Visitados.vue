@@ -2,7 +2,7 @@
   <div class="mt-5 container p-0" style="width: 100%;">
     <span class="subtitle" > Tópicos para você </span>
     <h2 class="title-h2">Mais visitados</h2>
-    <div class="d-flex row wrap justify-content-between">
+    <div class="grid">
       <!-- Use o loop apenas para as imagens -->
       <div
         v-for="(image, index) in images"
@@ -17,13 +17,13 @@
               class="card-img-top"
             />
           </div>
-          <div class="card-overlay row align-items-center justify-content-center">
-            <div class="content col-md-9">
+          <div class="card-overlay d-flex d-row align-items-center justify-content-center">
+            <div class="content">
               <h5 class="card-title">Museu Théo</h5>
               <span class="text-location">Maceió-AL</span><span>Esportes</span>
 
             </div>
-            <div class="col-md-3">
+            <div class="">
               <img class="icon" src="@/assets/Icons.png" alt="Icons" />
             </div>
           </div>
@@ -64,6 +64,12 @@ export default {
 </script>
 
 <style scoped>
+.grid{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+}
 .box-1{
   width: 25%;
   max-width: 400px;
@@ -71,21 +77,21 @@ export default {
 }
 .card-container {
   position: relative;
-  width: 100%;
+  width: 90%;
   margin-bottom: 100px;
 }
 
 .card-overlay {
   position: absolute;
   margin-top: -50px;
-  left: 10%;
-  width: 88%; /* Ajuste conforme necessário */
+  width: 100%; /* Ajuste conforme necessário */
   background-color: rgba(255, 255, 255, 1);
   padding: 10px;
   border-radius: 16px;
   z-index: 55;
   color: var(--vt-c-brown);
   font-family: 'poppins';
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.4);
 }
 
 .card-title {
@@ -97,6 +103,7 @@ export default {
 .content {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .card-text {
@@ -142,7 +149,24 @@ export default {
   display: block;
 }
 .icon {
-  width: 50px;
+  width: 40px;
   height: auto;
+}
+
+
+@media screen and (max-width: 768px) {
+  .box-1 {
+    width: 100%;
+  }
+  .card-overlay{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .grid{
+    justify-content: center;
+  }
+
 }
 </style>

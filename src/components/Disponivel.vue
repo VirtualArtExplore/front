@@ -84,7 +84,7 @@ methods: {
         this.currentPage++;
         const startIndex = (this.currentPage - 1) * this.itemsPerPage;
         const endIndex = startIndex + this.itemsPerPage;
-        this.items   
+        this.items  
  = this.items.concat(response.data.slice(startIndex, endIndex));
       }
     }
@@ -96,7 +96,7 @@ components: {
 </script>
 
 <style scoped>
-.card-container {
+.card-container7uhn {
 }
 
 .card-overlay {

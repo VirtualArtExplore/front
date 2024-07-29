@@ -98,7 +98,7 @@
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.04); color: var(--vt-c-brown);">
       © 2021 Copyright:
       <a class="text-reset fw-bold" href="https://mdbootstrap.com/"
-        >Equipe Museu</a
+        >Museu Art Explorer</a
       >
     </div>
     <!-- Copyright -->

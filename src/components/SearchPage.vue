@@ -3,10 +3,6 @@
 
   <div class="image-container">
 
-    <h1 class="image-text">
-      Tenha Uma Incrível <br />
-      <span>Experiência</span> Aqui!
-    </h1>
 <div class="input-div"><input
       type="text" class="input-overlay"
       placeholder="Procure por Museu, Cidade, Estado...."
@@ -15,26 +11,8 @@
 </div>
   </div>
 
-  <div class="page container-sm px-5 my-5">
-    <span class="subtitle">Encontre pelo seu gosto</span>
-    <h2 class="title-h2 mb-4">Categorias</h2><!--
-    <div class="row justify-content-md-center">
-      <div v-for="(image, index) in images" :key="index" class="col-md-3 category">
-        <img :src="image" :alt="'Imagem ' + (index + 1)" class="image-card" />
-      </div>
-    </div>-->
-    <div class="d-flex flex-row justify-content-between flex-wrap gap-1">
-      <div id="categ-esportes" :on-click="teste" class="category"><h5 class="categ-title"
-        >Esportes</h5></div>
-        <div id="categ-pessoas" :on-click="teste" class="category"><h5 class="categ-title"
-        >Pessoas</h5></div>
-        <div id="categ-escravidao" :on-click="teste" class="category"><h5 class="categ-title"
-          >Escravidão</h5></div>
-          <div id="categ-cultura" :on-click="teste" class="category"><h5 class="categ-title"
-            >Cultura</h5></div>
-    </div>
     <visitados />
-  </div>
+
   <!--<Disponivel />-->
 
   <Footer></Footer>
@@ -43,18 +21,12 @@
 import Visitados from "./Visitados.vue";
 import Disponivel from "./Disponivel.vue";
 import Footer from "./Footer.vue";
-import Header from "./Header.vue";
+import Header from "./HeaderPage.vue";
 
 export default {
   components: { Visitados, Disponivel, Footer, Header },
   data() {
     return {
-      images: [
-        "../src/assets/categorias/categ-esportes.jpg",
-        "../src/assets/categorias/categ-pessoas.jpg",
-        "../src/assets/categorias/categ-escravidao.jpg",
-        "../src/assets/categorias/categ-cultura.jpeg",
-      ],
     };
   },
 };
@@ -67,24 +39,8 @@ export default {
   font-size: 1.5rem;
   text-align: center;
 }
-.category{
-  background-size: cover;
-  background-position: center;
-  height: 100px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 23%;
-  min-width: 200px;
-}
-.category:hover{
-  cursor: pointer;
-  transform: scale(1.02);
-  transition: 0.5s;
-}
 .image-container {
-  padding-top: 100px;
+  padding-top: 0px;
   background-image: url("../assets/categorias/capa-museu2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -94,39 +50,26 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 600px;
-  gap: 20px;
+  height: 100px;
 }
-#categ-esportes{
-  background-image: url("../assets/categorias/categ-esportes.jpg");
-}
-#categ-pessoas{
-  background-image: url("../assets/categorias/categ-pessoas.jpg");
-}
-#categ-escravidao{
-  background-image: url("../assets/categorias/categ-escravidao.jpg");
-}
-#categ-cultura{
-  background-image: url("../assets/categorias/categ-cultura2.jpg");
-}
-
 .card-tag {
   background-repeat: no-repeat;
   background-size: cover;
 }
 .button-search{
+  width:10%;
   border:none;
   background-color: rgba(0, 0, 0, 0);
 }
 .input-div{
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border: none;
   border-radius: 15px;
   background-color: #E9E9E9;
-  max-width: 700px;
+  max-width: 1300px;
   width: 90%;
 }
 .input-overlay {

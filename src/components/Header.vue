@@ -1,6 +1,6 @@
 <template>
     <div class="fundo d-flex flex-row align-items-center justify-content-around align-items-baseline pt-4">
-      <div class="">
+      <div class="menu-items">
         <ul class="d-flex flex-row p-0">
           <li><a href="">Museus</a></li>
           <li><a class="px-2" href="">Obras</a></li>
@@ -30,7 +30,7 @@ export default {
     return {
       loginActive: false,
       registerActive: false,
-      sessionActive: true,
+      sessionActive: false,
       profileActive: false,
     };
   },

@@ -3,24 +3,22 @@
     <span class="subtitle" > Tópicos para você </span>
     <h2 class="title-h2">Mais visitados</h2>
     <div class="grid">
-      <!-- Use o loop apenas para as imagens -->
       <div
-        v-for="(image, index) in images"
-        :key="index"
+      v-for="item in items" :key="item.id"
         class="box-1"
       >
         <div class="card-container position-relative">
           <div class="img">
             <img
-              :src="image"
+              :src="item.url"
               :alt="'Imagem ' + (index + 1)"
               class="card-img-top"
             />
           </div>
           <div class="card-overlay d-flex d-row align-items-center justify-content-center">
             <div class="content">
-              <h5 class="card-title">Museu Théo</h5>
-              <span class="text-location">Maceió-AL</span><span>Esportes</span>
+              <h5 class="card-title">{{ item.width }}</h5>
+              <span class="text-location">Maceió-AL</span><span>{{ item.height }}</span>
 
             </div>
             <div class="">
@@ -41,22 +39,51 @@
 </template>
 
 <script>
+import axios from 'axios';
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { faHouse } from "@fortawesome/free-solid-svg-icons";
 
 export default {
   data() {
     return {
-      images: [
-        "../src/assets/museus/museu-theo-brandao.jpg",
-        "../src/assets/floriano.png",
-        "../src/assets/image1.png",
-        "../src/assets/noname.png",
-        "../src/assets/palacio.png",
-        "../src/assets/museu-1.png",
-      ],
-    };
+      items: [],
+      currentPage: 1,
+      itemsPerPage: 4,
+      totalPages: 0
+  }},
+  mounted(){
+  this.fetchData();;
+},
+methods: {
+  toggleFavorite(index) {
+    if (this.isFavorite(index)) {
+      // Se já for favorito, remover da lista de favoritos
+      this.favorites.splice(this.favorites.indexOf(index), 1);
+    } else {
+      // Se não for favorito, adicionar à lista de favoritos
+      this.favorites.push(index);
+    }
   },
+  isFavorite(index) {
+    // Verificar se o item está na lista de favoritos
+    return this.favorites.includes(index);
+  },
+  async fetchData() {
+    const url = `https://api.thecatapi.com/v1/images/search?limit=${this.itemsPerPage}`
+    const url2 = `https://virtualartexplorer.site/api/v1/museums`
+      const response = await axios.get(url); // Substitua pela sua URL
+      this.items = response.data.slice(0, this.itemsPerPage);
+      this.totalPages = Math.ceil(response.data.length / this.itemsPerPage);
+    },
+    loadMore() {
+      if (this.currentPage < this.totalPages) {
+        this.currentPage++;
+        const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+        const endIndex = startIndex + this.itemsPerPage;
+        this.items   
+ = this.items.concat(response.data.slice(startIndex, endIndex));
+      }
+    }
+},
   components: {
     FontAwesomeIcon,
   },
@@ -86,11 +113,11 @@ export default {
 .card-overlay {
   position: absolute;
   margin-top: -50px;
-  width: 99%; /* Ajuste conforme necessário */
+  width: 100%; /* Ajuste conforme necessário */
   background-color: rgba(255, 255, 255, 1);
   padding: 10px;
   border-radius: 16px;
-  z-index: 55;
+  z-index: 5;
   color: var(--vt-c-brown);
   font-family: 'poppins';
   box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.4);
@@ -127,6 +154,7 @@ export default {
   width: 100%;
   overflow: hidden;
   border-radius: 15px;
+  object-fit: contain;
 }
 
 .btn {

@@ -2,13 +2,17 @@
   <Header></Header>
 
   <div class="image-container">
-
-<div class="input-div"><input
-      type="text" class="input-overlay"
-      placeholder="Procure por Museu, Cidade...." :value="inputValue"
-    />
-    <button class="button-search"><font-awesome-icon icon="search" class="search-icon" size="lg" /></button>
-</div>
+    <div class="input-div">
+      <input
+        type="text"
+        class="input-overlay"
+        placeholder="Procure por Museu, Cidade...."
+        :value="inputValue"
+      />
+      <button class="button-search">
+        <font-awesome-icon icon="search" class="search-icon" size="lg" />
+      </button>
+    </div>
   </div>
 
   <!--<Disponivel />-->
@@ -26,19 +30,18 @@ export default {
   props: {
     inputValue: {
       type: String,
-      default: 'teste',
+      default: "teste",
     },
   },
   data() {
-    return {
-    };
+    return {};
   },
 };
 </script>
 
-<style>
-.categ-title{
-  font-family: 'Poppins';
+<style scoped>
+.categ-title {
+  font-family: "Poppins";
   color: white;
   font-size: 1.5rem;
   text-align: center;
@@ -57,19 +60,19 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.button-search{
-  width:10%;
-  border:none;
+.button-search {
+  width: 10%;
+  border: none;
   background-color: rgba(0, 0, 0, 0);
 }
-.input-div{
+.input-div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   border: none;
   border-radius: 15px;
-  background-color: #E9E9E9;
+  background-color: #e9e9e9;
   max-width: 1300px;
   width: 90%;
 }
@@ -110,22 +113,23 @@ span {
 img {
   width: 100%;
 }
-textarea:focus, input:focus, select:focus {
-    box-shadow: 0 0 0 0;
-    border: 0 none;
-    outline: 0;
+textarea:focus,
+input:focus,
+select:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
 }
 
 @media screen and (max-width: 768px) {
   .image-text {
     font-size: 2.5rem;
   }
-  .category{
+  .category {
     width: 100%;
     height: 70px;
     border-radius: 10px;
     margin-top: 5px;
   }
-
 }
 </style>

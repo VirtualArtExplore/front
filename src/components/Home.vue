@@ -2,36 +2,46 @@
   <Header></Header>
 
   <div class="image-container">
-
     <h1 class="image-text">
       Tenha Uma Incrível <br />
       <span>Experiência</span> Aqui!
     </h1>
-<div class="input-div"><input
-      type="text" class="input-overlay"
-      placeholder="Procure por Museu, Cidade, Estado...."
-    />
-    <button class="button-search"><font-awesome-icon icon="search" class="search-icon" size="lg" /></button>
-</div>
+    <div class="input-div">
+      <input
+        type="text"
+        class="input-overlay"
+        placeholder="Procure por Museu, Cidade, Estado...."
+      />
+      <router-link to="/search">
+        <button class="button-search">
+          <font-awesome-icon icon="search" class="search-icon" size="lg" />
+        </button>
+      </router-link>
+    </div>
   </div>
 
   <div class="page container-sm px-5 my-5">
     <span class="subtitle">Encontre pelo seu gosto</span>
-    <h2 class="title-h2 mb-4">Categorias</h2><!--
+    <h2 class="title-h2 mb-4">Categorias</h2>
+    <!--
     <div class="row justify-content-md-center">
       <div v-for="(image, index) in images" :key="index" class="col-md-3 category">
         <img :src="image" :alt="'Imagem ' + (index + 1)" class="image-card" />
       </div>
     </div>-->
     <div class="d-flex flex-row justify-content-between flex-wrap gap-1">
-      <div id="categ-esportes" :on-click="teste" class="category"><h5 class="categ-title"
-        >Esportes</h5></div>
-        <div id="categ-pessoas" :on-click="teste" class="category"><h5 class="categ-title"
-        >Pessoas</h5></div>
-        <div id="categ-escravidao" :on-click="teste" class="category"><h5 class="categ-title"
-          >Escravidão</h5></div>
-          <div id="categ-cultura" :on-click="teste" class="category"><h5 class="categ-title"
-            >Cultura</h5></div>
+      <div id="categ-esportes" :on-click="teste" class="category">
+        <h5 class="categ-title">Esportes</h5>
+      </div>
+      <div id="categ-pessoas" :on-click="teste" class="category">
+        <h5 class="categ-title">Pessoas</h5>
+      </div>
+      <div id="categ-escravidao" :on-click="teste" class="category">
+        <h5 class="categ-title">Escravidão</h5>
+      </div>
+      <div id="categ-cultura" :on-click="teste" class="category">
+        <h5 class="categ-title">Cultura</h5>
+      </div>
     </div>
     <visitados />
   </div>
@@ -61,13 +71,13 @@ export default {
 </script>
 
 <style>
-.categ-title{
-  font-family: 'Poppins';
+.categ-title {
+  font-family: "Poppins";
   color: white;
   font-size: 1.5rem;
   text-align: center;
 }
-.category{
+.category {
   background-size: cover;
   background-position: center;
   height: 100px;
@@ -78,7 +88,7 @@ export default {
   width: 23%;
   min-width: 200px;
 }
-.category:hover{
+.category:hover {
   cursor: pointer;
   transform: scale(1.02);
   transition: 0.5s;
@@ -97,16 +107,16 @@ export default {
   height: 600px;
   gap: 20px;
 }
-#categ-esportes{
+#categ-esportes {
   background-image: url("../assets/categorias/categ-esportes.jpg");
 }
-#categ-pessoas{
+#categ-pessoas {
   background-image: url("../assets/categorias/categ-pessoas.jpg");
 }
-#categ-escravidao{
+#categ-escravidao {
   background-image: url("../assets/categorias/categ-escravidao.jpg");
 }
-#categ-cultura{
+#categ-cultura {
   background-image: url("../assets/categorias/categ-cultura2.jpg");
 }
 
@@ -114,18 +124,18 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.button-search{
-  border:none;
+.button-search {
+  border: none;
   background-color: rgba(0, 0, 0, 0);
 }
-.input-div{
+.input-div {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   border: none;
   border-radius: 15px;
-  background-color: #E9E9E9;
+  background-color: #e9e9e9;
   max-width: 700px;
   width: 90%;
 }
@@ -166,22 +176,23 @@ span {
 img {
   width: 100%;
 }
-textarea:focus, input:focus, select:focus {
-    box-shadow: 0 0 0 0;
-    border: 0 none;
-    outline: 0;
+textarea:focus,
+input:focus,
+select:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
 }
 
 @media screen and (max-width: 768px) {
   .image-text {
     font-size: 2.5rem;
   }
-  .category{
+  .category {
     width: 100%;
     height: 70px;
     border-radius: 10px;
     margin-top: 5px;
   }
-
 }
 </style>

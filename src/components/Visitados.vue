@@ -67,7 +67,7 @@ export default {
 .grid{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: row;
 }
 .box-1{

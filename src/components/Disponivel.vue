@@ -96,8 +96,6 @@ components: {
 </script>
 
 <style scoped>
-.card-container7uhn {
-}
 
 .card-overlay {
 background-color: rgba(255, 255, 255, 1);

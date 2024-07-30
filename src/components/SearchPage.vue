@@ -5,13 +5,11 @@
 
 <div class="input-div"><input
       type="text" class="input-overlay"
-      placeholder="Procure por Museu, Cidade...."
+      placeholder="Procure por Museu, Cidade...." :value="inputValue"
     />
     <button class="button-search"><font-awesome-icon icon="search" class="search-icon" size="lg" /></button>
 </div>
   </div>
-
-    <visitados />
 
   <!--<Disponivel />-->
 
@@ -25,6 +23,12 @@ import Header from "./HeaderPage.vue";
 
 export default {
   components: { Visitados, Disponivel, Footer, Header },
+  props: {
+    inputValue: {
+      type: String,
+      default: 'teste',
+    },
+  },
   data() {
     return {
     };
@@ -71,10 +75,10 @@ export default {
 }
 .input-overlay {
   position: relative;
-  padding: 18px 10px;
+  padding: 18px;
   text-align: start;
   border: none;
-  width: 100%;
+  width: max-content;
   max-width: 700px;
   font-size: 1.1rem;
   font-family: "Poppins", sans-serif;

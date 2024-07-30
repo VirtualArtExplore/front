@@ -9,7 +9,7 @@
             </div>
             <div class="caixa-form">
                 <label for="ger_lastname" class="required">Nome</label>
-                <input class="input-text" name="ger_lastname" type="text" placeholder="Digite seu nome" maxlength="50">>
+                <input class="input-text" name="ger_lastname" type="text" placeholder="Digite seu nome" maxlength="50">
             </div>
             <div class="caixa-form">
                 <label class="required" for="ger_email">Email</label>
@@ -137,7 +137,7 @@ p{
     text-align: center;
 }
 .required:after {
-  content:" *"; 
+  content:" *";
   color: red;
 }
 </style>

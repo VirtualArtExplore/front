@@ -4,11 +4,11 @@
         <h2><a v-on:click="closeRegister">⭠</a>Register</h2>
         <form class="forms" @submit.prevent="realizarRegister">
             <div class="caixa-form">
-                <label for="ger_firstname" class="required">Nome</label>
+                <label for="ger_firstname" class="required">Primeiro Nome</label>
                 <input class="input-text" name="ger_firstname" type="text" placeholder="Digite seu nome" maxlength="50">
             </div>
             <div class="caixa-form">
-                <label for="ger_lastname" class="required">Nome</label>
+                <label for="ger_lastname" class="required">Sobrenome</label>
                 <input class="input-text" name="ger_lastname" type="text" placeholder="Digite seu nome" maxlength="50">
             </div>
             <div class="caixa-form">

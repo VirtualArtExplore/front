@@ -10,15 +10,15 @@
         <div class="card-container position-relative">
           <div class="img">
             <img
-              :src="item.url"
-              :alt="'Imagem ' + (index + 1)"
+              :src="item.thumbnail"
+              :alt="'Imagem ' + item.title"
               class="card-img-top"
             />
           </div>
           <div class="card-overlay d-flex d-row align-items-center justify-content-center">
             <div class="content">
-              <h5 class="card-title">{{ item.width }}</h5>
-              <span class="text-location">Maceió-AL</span><span>{{ item.height }}</span>
+              <h5 class="card-title">{{ item.title }}</h5>
+              <span class="text-location">Maceió-AL</span><span>{{ item.category }}</span>
 
             </div>
             <div class="">
@@ -29,64 +29,36 @@
       </div>
     </div>
     <div class="row justify-content-center mt-5">
-      <button type="button" class="btn btn-warning w-25 mb-4">
+      <!--<button type="button" class="btn btn-warning w-25 mb-4">
         Mais Museus
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="white" width="20px"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
 
-      </button>
+      </button>-->
     </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 export default {
   data() {
     return {
       items: [],
       currentPage: 1,
-      itemsPerPage: 4,
+      itemsPerPage: 4,  
       totalPages: 0
   }},
   mounted(){
   this.fetchData();;
 },
 methods: {
-  toggleFavorite(index) {
-    if (this.isFavorite(index)) {
-      // Se já for favorito, remover da lista de favoritos
-      this.favorites.splice(this.favorites.indexOf(index), 1);
-    } else {
-      // Se não for favorito, adicionar à lista de favoritos
-      this.favorites.push(index);
-    }
-  },
-  isFavorite(index) {
-    // Verificar se o item está na lista de favoritos
-    return this.favorites.includes(index);
-  },
   async fetchData() {
-    const url = `https://api.thecatapi.com/v1/images/search?limit=${this.itemsPerPage}`
-    const url2 = `https://virtualartexplorer.site/api/v1/museums`
+    const url = `https://dummyjson.com/products?limit=30`
       const response = await axios.get(url); // Substitua pela sua URL
-      this.items = response.data.slice(0, this.itemsPerPage);
-      this.totalPages = Math.ceil(response.data.length / this.itemsPerPage);
-    },
-    loadMore() {
-      if (this.currentPage < this.totalPages) {
-        this.currentPage++;
-        const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-        const endIndex = startIndex + this.itemsPerPage;
-        this.items   
- = this.items.concat(response.data.slice(startIndex, endIndex));
-      }
+      this.items = response.data.products.filter(item => item.category === 'beauty');
     }
 },
-  components: {
-    FontAwesomeIcon,
-  },
 };
 </script>
 
